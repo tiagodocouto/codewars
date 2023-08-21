@@ -20,22 +20,20 @@
 
 package io.github.tiagodocouto.codewars.math
 
-import io.github.tiagodocouto.codewars.math.NarcissisticNumber.isNarcissistic
+import io.github.tiagodocouto.codewars.math.SumTriangleOddNumbers.sumTriangleOdd
 import io.github.tiagodocouto.helpers.AssertExtensions.shouldBe
 import org.junit.jupiter.api.Test
 
-class NarcissisticNumberTest {
+/**
+ * [Sum of odd numbers](https://www.codewars.com/kata/55fd2d567d94ac3bc9000064)
+ */
+class SumTriangleOddNumbersTest {
     @Test
-    fun `numbers should be narcissistic`() {
-        1.isNarcissistic() shouldBe true
-        153.isNarcissistic() shouldBe true
-        370.isNarcissistic() shouldBe true
-    }
-
-    @Test
-    fun `numbers should not be narcissistic`() {
-        324.isNarcissistic() shouldBe false
-        435.isNarcissistic() shouldBe false
-        5555.isNarcissistic() shouldBe false
+    fun `sum triangle odd numbers`() {
+        1.sumTriangleOdd() shouldBe 1
+        2.sumTriangleOdd() shouldBe 8
+        3.sumTriangleOdd() shouldBe 27
+        4.sumTriangleOdd() shouldBe 64
+        42.sumTriangleOdd() shouldBe 74088
     }
 }

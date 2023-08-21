@@ -20,22 +20,23 @@
 
 package io.github.tiagodocouto.codewars.math
 
-import io.github.tiagodocouto.codewars.math.NarcissisticNumber.isNarcissistic
-import io.github.tiagodocouto.helpers.AssertExtensions.shouldBe
-import org.junit.jupiter.api.Test
+import kotlin.math.pow
 
-class NarcissisticNumberTest {
-    @Test
-    fun `numbers should be narcissistic`() {
-        1.isNarcissistic() shouldBe true
-        153.isNarcissistic() shouldBe true
-        370.isNarcissistic() shouldBe true
-    }
-
-    @Test
-    fun `numbers should not be narcissistic`() {
-        324.isNarcissistic() shouldBe false
-        435.isNarcissistic() shouldBe false
-        5555.isNarcissistic() shouldBe false
-    }
+/**
+ * [Sum of odd numbers](https://www.codewars.com/kata/55fd2d567d94ac3bc9000064)
+ *
+ * Given the triangle of consecutive odd numbers:
+ *              1
+ *           3     5
+ *        7     9    11
+ *    13    15    17    19
+ * 21    23    25    27    29
+ * ...
+ * Calculate the sum of the numbers in the nth row of this triangle (starting at index 1) e.g.: (Input --> Output)
+ *
+ * 1 -->  1
+ * 2 --> 3 + 5 = 8
+ */
+object SumTriangleOddNumbers {
+    fun Int.sumTriangleOdd(): Int = toDouble().pow(3.0).toInt()
 }
