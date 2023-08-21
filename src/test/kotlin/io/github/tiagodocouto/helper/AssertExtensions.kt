@@ -18,10 +18,19 @@
  * OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
  */
 
-package io.github.tiagodocouto.helpers
+package io.github.tiagodocouto.helper
 
-import org.junit.jupiter.api.Assertions
+import org.junit.jupiter.api.Assertions.assertEquals
+import org.junit.jupiter.api.Assertions.assertFalse
+import org.junit.jupiter.api.Assertions.assertTrue
 
 object AssertExtensions {
-    infix fun <T> T.shouldBe(expected: T) = Assertions.assertEquals(expected, this)
+    infix fun <T> T.shouldBe(expected: T) =
+        assertEquals(expected, this)
+
+    fun Boolean.shouldBeTrue() =
+        assertTrue(this)
+
+    fun Boolean.shouldBeFalse() =
+        assertFalse(this)
 }

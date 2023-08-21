@@ -43,6 +43,6 @@ object MultiplesOf {
             .fold(emptySet<Int>()) { acc, i -> acc.union(i) }
             .sum()
 
-    fun Int.sumMultiplesOf3Or5(): Int =
-        sumMultiplesOf(3, 5)
+    fun sumMultiplesOf3Or5(int: Int): Int =
+        int.sumMultiplesOf(3, 5)
 }

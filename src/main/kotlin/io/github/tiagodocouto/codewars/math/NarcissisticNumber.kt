@@ -23,8 +23,14 @@ package io.github.tiagodocouto.codewars.math
 import kotlin.math.pow
 
 object NarcissisticNumber {
-    fun Number.isNarcissistic(): Boolean = this == toString()
-        .map { it.toString().toDouble().pow(toString().length.toDouble()) }
-        .reduce(Double::plus)
-        .toInt()
+    fun isNarcissistic(number: Number): Boolean =
+        number == number.toString()
+            .map { it powByLength number }
+            .sum()
+
+    private infix fun Char.powByLength(number: Number) =
+        toString()
+            .toDouble()
+            .pow(number.toString().length.toDouble())
+            .toInt()
 }

@@ -30,7 +30,13 @@ package io.github.tiagodocouto.codewars.math
  * Happy Coding!
  */
 object SquareEveryNumber {
-    fun Int.squareEveryDigit(): Int = toString().map {
-        it.digitToInt() * it.digitToInt()
-    }.joinToString("").toInt()
+    fun squareEveryDigit(int: Int): Int =
+        int.toString()
+            .map(::square)
+            .joinToString("")
+            .toInt()
+
+    private fun square(char: Char) =
+        char.digitToInt()
+            .let { it * it }
 }

@@ -21,7 +21,7 @@
 package io.github.tiagodocouto.codewars.mask
 
 import io.github.tiagodocouto.codewars.mask.CreditCardMask.mask
-import io.github.tiagodocouto.helpers.AssertExtensions.shouldBe
+import io.github.tiagodocouto.helper.AssertExtensions.shouldBe
 import org.junit.jupiter.api.Test
 
 /**
@@ -30,11 +30,11 @@ import org.junit.jupiter.api.Test
 class CreditCardMaskTest {
     @Test
     fun `should mask a credit card number`() {
-        "4556364607935616".mask() shouldBe "############5616"
-        "64607935616".mask() shouldBe "#######5616"
-        "1".mask() shouldBe "1"
-        "".mask() shouldBe ""
-        "Skippy".mask() shouldBe "##ippy"
-        "Nananananananananananananananana Batman!".mask() shouldBe "####################################man!"
+        mask("4556364607935616") shouldBe "############5616"
+        mask("64607935616") shouldBe "#######5616"
+        mask("1") shouldBe "1"
+        mask("") shouldBe ""
+        mask("Skippy") shouldBe "##ippy"
+        mask("Nanananananananananana Batman!") shouldBe "##########################man!"
     }
 }

@@ -21,7 +21,7 @@
 package io.github.tiagodocouto.codewars.math
 
 import io.github.tiagodocouto.codewars.math.SumTriangleOddNumbers.sumTriangleOdd
-import io.github.tiagodocouto.helpers.AssertExtensions.shouldBe
+import io.github.tiagodocouto.helper.AssertExtensions.shouldBe
 import org.junit.jupiter.api.Test
 
 /**
@@ -30,10 +30,10 @@ import org.junit.jupiter.api.Test
 class SumTriangleOddNumbersTest {
     @Test
     fun `sum triangle odd numbers`() {
-        1.sumTriangleOdd() shouldBe 1
-        2.sumTriangleOdd() shouldBe 8
-        3.sumTriangleOdd() shouldBe 27
-        4.sumTriangleOdd() shouldBe 64
-        42.sumTriangleOdd() shouldBe 74088
+        sumTriangleOdd(1) shouldBe 1
+        sumTriangleOdd(2) shouldBe 8
+        sumTriangleOdd(3) shouldBe 27
+        sumTriangleOdd(4) shouldBe 64
+        sumTriangleOdd(42) shouldBe 74088
     }
 }

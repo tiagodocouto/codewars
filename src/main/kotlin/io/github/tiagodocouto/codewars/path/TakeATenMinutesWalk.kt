@@ -41,20 +41,21 @@ package io.github.tiagodocouto.codewars.path
 object TakeATenMinutesWalk {
     private data class Point(val x: Int = 0, val y: Int = 0)
 
-    fun List<Char>.isValidWalk(): Boolean {
-        if (size != 10) return false
-        return map {
-            when (it) {
-                'n' -> Point(y = 1)
-                's' -> Point(y = -1)
-                'e' -> Point(x = 1)
-                'w' -> Point(x = -1)
-                else -> Point()
-            }
-        }.reduce { acc, point ->
+    fun isValid10MinutesWalk(walk: List<Char>): Boolean {
+        if (walk.size != 10) return false
+        return walk.map(::mapDirections).reduce { acc, point ->
             Point(acc.x + point.x, acc.y + point.y)
         }.let {
             it.x == 0 && it.y == 0
         }
     }
+
+    private fun mapDirections(char: Char) =
+        when (char) {
+            'n' -> Point(y = 1)
+            's' -> Point(y = -1)
+            'e' -> Point(x = 1)
+            'w' -> Point(x = -1)
+            else -> Point()
+        }
 }

@@ -21,7 +21,7 @@
 package io.github.tiagodocouto.codewars.math
 
 import io.github.tiagodocouto.codewars.math.PascalTriangle.findPascalNumberOn
-import io.github.tiagodocouto.helpers.AssertExtensions.shouldBe
+import io.github.tiagodocouto.helper.AssertExtensions.shouldBe
 import org.junit.jupiter.api.Test
 
 class PascalTriangleTest {

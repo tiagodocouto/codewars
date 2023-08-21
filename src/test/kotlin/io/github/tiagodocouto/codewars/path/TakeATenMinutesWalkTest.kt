@@ -20,8 +20,9 @@
 
 package io.github.tiagodocouto.codewars.path
 
-import io.github.tiagodocouto.codewars.path.TakeATenMinutesWalk.isValidWalk
-import io.github.tiagodocouto.helpers.AssertExtensions.shouldBe
+import io.github.tiagodocouto.codewars.path.TakeATenMinutesWalk.isValid10MinutesWalk
+import io.github.tiagodocouto.helper.AssertExtensions.shouldBeFalse
+import io.github.tiagodocouto.helper.AssertExtensions.shouldBeTrue
 import org.junit.jupiter.api.Test
 
 /**
@@ -30,14 +31,14 @@ import org.junit.jupiter.api.Test
 class TakeATenMinutesWalkTest {
     @Test
     fun `should take a ten minutes`() {
-        listOf('n', 's', 'n', 's', 'n', 's', 'n', 's', 'n', 's').isValidWalk() shouldBe true
+        isValid10MinutesWalk(listOf('n', 's', 'n', 's', 'n', 's', 'n', 's', 'n', 's')).shouldBeTrue()
     }
 
     @Test
     fun `should not take a ten minutes`() {
-        listOf('n', 's', 'e', 'w').isValidWalk() shouldBe false
-        listOf('w', 'e', 'w', 'e', 'w', 'e', 'w', 'e', 'w', 'e', 'w', 'e').isValidWalk() shouldBe false
-        listOf('w').isValidWalk() shouldBe false
-        listOf('n', 'n', 'n', 's', 'n', 's', 'n', 's', 'n', 's').isValidWalk() shouldBe false
+        isValid10MinutesWalk(listOf('n', 's', 'e', 'w')).shouldBeFalse()
+        isValid10MinutesWalk(listOf('w', 'e', 'w', 'e', 'w', 'e', 'w', 'e', 'w', 'e', 'w', 'e')).shouldBeFalse()
+        isValid10MinutesWalk(listOf('w')).shouldBeFalse()
+        isValid10MinutesWalk(listOf('n', 'n', 'n', 's', 'n', 's', 'n', 's', 'n', 's')).shouldBeFalse()
     }
 }

@@ -25,6 +25,9 @@ import java.math.BigInteger
 object PascalTriangle {
     private var triangle: Array<Array<BigInteger?>?> = arrayOfNulls(0)
 
+    fun findPascalNumberOn(row: Int, col: Int): String =
+        cached(row, col) ?: calculate(row, col)
+
     private fun calculateEdges(i: Int) {
         triangle[i] = arrayOfNulls(i + 1)
         triangle[i]!![0] = BigInteger.valueOf(1L)
@@ -47,7 +50,4 @@ object PascalTriangle {
 
         return cached(row, col)!!
     }
-
-    fun findPascalNumberOn(row: Int, col: Int): String =
-        cached(row, col) ?: calculate(row, col)
 }

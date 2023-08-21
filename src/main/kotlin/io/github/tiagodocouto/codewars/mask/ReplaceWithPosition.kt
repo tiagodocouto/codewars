@@ -37,8 +37,9 @@ object ReplaceWithPosition {
     private const val ALPHABET_MOD_OPERATOR = 32
     private val NOT_ALPHABET = Regex("[^a-zA-Z]")
 
-    fun String.alphabetPosition() = NOT_ALPHABET.replace(this, "")
-        .toCharArray()
-        .map { it.code % ALPHABET_MOD_OPERATOR }
-        .joinToString(" ")
+    fun alphabetPosition(string: String) =
+        NOT_ALPHABET.replace(string, "")
+            .toCharArray()
+            .map { it.code % ALPHABET_MOD_OPERATOR }
+            .joinToString(" ")
 }

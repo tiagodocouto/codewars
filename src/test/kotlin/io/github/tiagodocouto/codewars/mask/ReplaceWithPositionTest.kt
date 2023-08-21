@@ -21,7 +21,7 @@
 package io.github.tiagodocouto.codewars.mask
 
 import io.github.tiagodocouto.codewars.mask.ReplaceWithPosition.alphabetPosition
-import io.github.tiagodocouto.helpers.AssertExtensions.shouldBe
+import io.github.tiagodocouto.helper.AssertExtensions.shouldBe
 import org.junit.jupiter.api.Test
 
 /**
@@ -30,8 +30,9 @@ import org.junit.jupiter.api.Test
 class ReplaceWithPositionTest {
     @Test
     fun `should replace correctly`() {
-        "aA".alphabetPosition() shouldBe "1 1"
-        "zZ".alphabetPosition() shouldBe "26 26"
-        "The narwhal bacons at midnight.".alphabetPosition() shouldBe "20 8 5 14 1 18 23 8 1 12 2 1 3 15 14 19 1 20 13 9 4 14 9 7 8 20"
+        alphabetPosition("aA") shouldBe "1 1"
+        alphabetPosition("zZ") shouldBe "26 26"
+        alphabetPosition("The narwhal bacons at midnight.") shouldBe
+            "20 8 5 14 1 18 23 8 1 12 2 1 3 15 14 19 1 20 13 9 4 14 9 7 8 20"
     }
 }

@@ -22,7 +22,7 @@ package io.github.tiagodocouto.codewars.math
 
 import io.github.tiagodocouto.codewars.math.MultiplesOf.sumMultiplesOf
 import io.github.tiagodocouto.codewars.math.MultiplesOf.sumMultiplesOf3Or5
-import io.github.tiagodocouto.helpers.AssertExtensions.shouldBe
+import io.github.tiagodocouto.helper.AssertExtensions.shouldBe
 import org.junit.jupiter.api.Test
 
 /**
@@ -31,9 +31,9 @@ import org.junit.jupiter.api.Test
 class MultiplesOfTest {
     @Test
     fun `sum of multiples of 3 and 5`() {
-        10.sumMultiplesOf3Or5() shouldBe 23
-        20.sumMultiplesOf3Or5() shouldBe 78
-        200.sumMultiplesOf3Or5() shouldBe 9168
+        sumMultiplesOf3Or5(10) shouldBe 23
+        sumMultiplesOf3Or5(20) shouldBe 78
+        sumMultiplesOf3Or5(200) shouldBe 9168
     }
 
     @Test

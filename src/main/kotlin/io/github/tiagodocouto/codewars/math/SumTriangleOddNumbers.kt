@@ -20,8 +20,6 @@
 
 package io.github.tiagodocouto.codewars.math
 
-import kotlin.math.pow
-
 /**
  * [Sum of odd numbers](https://www.codewars.com/kata/55fd2d567d94ac3bc9000064)
  *
@@ -38,5 +36,6 @@ import kotlin.math.pow
  * 2 --> 3 + 5 = 8
  */
 object SumTriangleOddNumbers {
-    fun Int.sumTriangleOdd(): Int = toDouble().pow(3.0).toInt()
+    fun sumTriangleOdd(int: Int): Int =
+        int * int * int
 }
