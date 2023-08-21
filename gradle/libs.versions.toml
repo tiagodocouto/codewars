@@ -1,0 +1,15 @@
+[versions]
+kotlin = "1.9.0"
+test-junit = "5.7.0"
+
+[libraries]
+kotlin-reflect = { module = "org.jetbrains.kotlin:kotlin-reflect", version.ref = "kotlin" }
+test-junit = { module = "org.junit.jupiter:junit-jupiter", version.ref = "test-junit" }
+
+[bundles]
+test-junit = [
+    "test-junit",
+]
+
+[plugins]
+kotlin-jvm = { id = "org.jetbrains.kotlin.jvm", version.ref = "kotlin" }
