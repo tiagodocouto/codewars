@@ -27,8 +27,8 @@ import org.junit.jupiter.api.Test
 class SquareEveryNumberTest {
     @Test
     fun `square each digit`() {
-        squareEveryDigit(0) shouldBe 0
-        squareEveryDigit(2112) shouldBe 4114
-        squareEveryDigit(3212) shouldBe 9414
+        0.squareEveryDigit() shouldBe 0
+        2112.squareEveryDigit() shouldBe 4114
+        3212.squareEveryDigit() shouldBe 9414
     }
 }

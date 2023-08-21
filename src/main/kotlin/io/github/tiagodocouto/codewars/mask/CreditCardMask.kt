@@ -44,6 +44,5 @@ object CreditCardMask {
     private const val MASK = "#"
     private val CREDIT_CARD_MASK = Regex(".(?=.{4})")
 
-    fun mask(creditCard: String): String =
-        CREDIT_CARD_MASK.replace(creditCard, MASK)
+    fun String.mask(): String = replace(CREDIT_CARD_MASK, MASK)
 }

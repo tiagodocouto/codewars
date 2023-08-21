@@ -28,8 +28,7 @@ package io.github.tiagodocouto.codewars.math
  * Happy Coding!
  */
 object SquareEveryNumber {
-    fun squareEveryDigit(n: Int): Int =
-        n.toString().map {
-            it.digitToInt() * it.digitToInt()
-        }.joinToString("").toInt()
+    fun Int.squareEveryDigit(): Int = toString().map {
+        it.digitToInt() * it.digitToInt()
+    }.joinToString("").toInt()
 }

@@ -20,19 +20,19 @@
 
 package io.github.tiagodocouto.codewars.math
 
-import io.github.tiagodocouto.codewars.math.NarcissisticNumber.isNarcissisticNumber
+import io.github.tiagodocouto.codewars.math.NarcissisticNumber.isNarcissistic
 import io.github.tiagodocouto.helpers.AssertExtensions.shouldBe
 import org.junit.jupiter.api.Test
 
 class NarcissisticNumberTest {
     @Test
     fun `check if numbers are narcissistic`() {
-        isNarcissisticNumber(1) shouldBe true
-        isNarcissisticNumber(153) shouldBe true
-        isNarcissisticNumber(370) shouldBe true
+        1.isNarcissistic() shouldBe true
+        153.isNarcissistic() shouldBe true
+        370.isNarcissistic() shouldBe true
 
-        isNarcissisticNumber(324) shouldBe false
-        isNarcissisticNumber(435) shouldBe false
-        isNarcissisticNumber(5555) shouldBe false
+        324.isNarcissistic() shouldBe false
+        435.isNarcissistic() shouldBe false
+        5555.isNarcissistic() shouldBe false
     }
 }
