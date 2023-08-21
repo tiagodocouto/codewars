@@ -23,5 +23,6 @@ rootProject.name = "codewars"
 pluginManagement {
     repositories {
         mavenCentral()
+        gradlePluginPortal()
     }
 }

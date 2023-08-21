@@ -1,6 +1,7 @@
 [versions]
 kotlin = "1.9.0"
 test-junit = "5.7.0"
+quality-sonarqube = "4.3.0.3225"
 
 [libraries]
 kotlin-reflect = { module = "org.jetbrains.kotlin:kotlin-reflect", version.ref = "kotlin" }
@@ -13,3 +14,4 @@ test-junit = [
 
 [plugins]
 kotlin-jvm = { id = "org.jetbrains.kotlin.jvm", version.ref = "kotlin" }
+quality-sonarqube = { id = "org.sonarqube", version.ref = "quality-sonarqube" }

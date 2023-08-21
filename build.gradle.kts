@@ -25,10 +25,13 @@ plugins {
     idea
     // Kotlin
     alias(libs.plugins.kotlin.jvm)
+    // Quality
+    alias(libs.plugins.quality.sonarqube)
 }
 
 repositories {
     mavenCentral()
+    gradlePluginPortal()
 }
 
 dependencies {
