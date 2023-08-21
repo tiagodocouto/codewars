@@ -18,13 +18,25 @@
  * OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
  */
 
-package io.github.tiagodocouto.codewars.math
+package io.github.tiagodocouto.codewars.mask
 
-import kotlin.math.pow
+/**
+ * Welcome.
+ *
+ * In this kata you are required to, given a string, replace every letter with its position in the alphabet.
+ * If anything in the text isn't a letter, ignore it and don't return it.
+ * "a" = 1, "b" = 2, etc.
+ *
+ * Example
+ * alphabetPosition("The sunset sets at twelve o' clock.")
+ * Should return "20 8 5 19 21 14 19 5 20 19 5 20 19 1 20 20 23 5 12 22 5 15 3 12 15 3 11" ( as a string )
+ */
+object ReplaceWithPosition {
+    private const val ALPHABET_MOD_OPERATOR = 32
+    private val NOT_ALPHABET = Regex("[^a-zA-Z]")
 
-object NarcissisticNumber {
-    fun Number.isNarcissistic(): Boolean = this == toString()
-        .map { it.toString().toDouble().pow(toString().length.toDouble()) }
-        .reduce(Double::plus)
-        .toInt()
+    fun String.alphabetPosition() = NOT_ALPHABET.replace(this, "")
+        .toCharArray()
+        .map { it.code % ALPHABET_MOD_OPERATOR }
+        .joinToString(" ")
 }

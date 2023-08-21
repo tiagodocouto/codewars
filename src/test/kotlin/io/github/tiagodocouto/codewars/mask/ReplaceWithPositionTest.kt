@@ -18,13 +18,17 @@
  * OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
  */
 
-package io.github.tiagodocouto.codewars.math
+package io.github.tiagodocouto.codewars.mask
 
-import kotlin.math.pow
+import io.github.tiagodocouto.codewars.mask.ReplaceWithPosition.alphabetPosition
+import io.github.tiagodocouto.helpers.AssertExtensions.shouldBe
+import org.junit.jupiter.api.Test
 
-object NarcissisticNumber {
-    fun Number.isNarcissistic(): Boolean = this == toString()
-        .map { it.toString().toDouble().pow(toString().length.toDouble()) }
-        .reduce(Double::plus)
-        .toInt()
+class ReplaceWithPositionTest {
+    @Test
+    fun `should replace correctly`() {
+        "aA".alphabetPosition() shouldBe "1 1"
+        "zZ".alphabetPosition() shouldBe "26 26"
+        "The narwhal bacons at midnight.".alphabetPosition() shouldBe "20 8 5 14 1 18 23 8 1 12 2 1 3 15 14 19 1 20 13 9 4 14 9 7 8 20"
+    }
 }
