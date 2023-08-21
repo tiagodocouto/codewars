@@ -18,10 +18,32 @@
  * OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
  */
 
-package io.github.tiagodocouto.helpers
+package io.github.tiagodocouto.codewars.mask
 
-import org.junit.jupiter.api.Assertions
+/**
+ * Usually when you buy something, you're asked whether your credit card number,
+ * phone number or answer to your most secret question is still correct.
+ * However, since someone could look over your shoulder, you don't want that
+ * shown on your screen. Instead, we mask it.
+ *
+ * Your task is to write a function maskify, which changes all but the last four
+ * characters into '#'.
+ *
+ * Examples (input --> output):
+ *
+ * "4556364607935616" --> "############5616"
+ *      "64607935616" -->      "#######5616"
+ *                "1" -->                "1"
+ *                 "" -->                 ""
+ *
+ * // "What was the name of your first pet?"
+ * "Skippy" --> "##ippy"
+ * "Nananananananananananananananana Batman!" --> "####################################man!"
+ */
+object CreditCardMask {
+    private const val MASK = "#"
+    private val CREDIT_CARD_MASK = Regex(".(?=.{4})")
 
-object AssertExtensions {
-    infix fun <T> T.shouldBe(expected: T) = Assertions.assertEquals(expected, this)
+    fun mask(creditCard: String): String =
+        CREDIT_CARD_MASK.replace(creditCard, MASK)
 }

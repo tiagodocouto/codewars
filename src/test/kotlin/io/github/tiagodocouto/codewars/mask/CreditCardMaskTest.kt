@@ -18,10 +18,20 @@
  * OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
  */
 
-package io.github.tiagodocouto.helpers
+package io.github.tiagodocouto.codewars.mask
 
-import org.junit.jupiter.api.Assertions
+import io.github.tiagodocouto.codewars.mask.CreditCardMask.mask
+import io.github.tiagodocouto.helpers.AssertExtensions.shouldBe
+import org.junit.jupiter.api.Test
 
-object AssertExtensions {
-    infix fun <T> T.shouldBe(expected: T) = Assertions.assertEquals(expected, this)
+class CreditCardMaskTest {
+    @Test
+    fun `should mask a credit card number`() {
+        mask("4556364607935616") shouldBe "############5616"
+        mask("64607935616") shouldBe "#######5616"
+        mask("1") shouldBe "1"
+        mask("") shouldBe ""
+        mask("Skippy") shouldBe "##ippy"
+        mask("Nananananananananananananananana Batman!") shouldBe "####################################man!"
+    }
 }

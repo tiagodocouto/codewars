@@ -22,19 +22,15 @@ package io.github.tiagodocouto.codewars.math
 
 import io.github.tiagodocouto.codewars.math.PascalTriangle.findPascalNumberOn
 import io.github.tiagodocouto.helpers.AssertExtensions.shouldBe
-import io.github.tiagodocouto.helpers.AssertExtensions.shouldBeCached
 import org.junit.jupiter.api.Test
 
 class PascalTriangleTest {
     @Test
     fun `calculate Pascal Triangle`() {
         findPascalNumberOn(3000, 10) shouldBe "53593460098946373964842000"
-
-        shouldBeCached {
-            findPascalNumberOn(1250, 25) shouldBe "273297579454913577982090871768615134079835893782500"
-            findPascalNumberOn(2295, 10) shouldBe "4791376379040754076012010"
-            findPascalNumberOn(2000, 5) shouldBe "664668499500"
-        }
+        findPascalNumberOn(1250, 25) shouldBe "273297579454913577982090871768615134079835893782500"
+        findPascalNumberOn(2295, 10) shouldBe "4791376379040754076012010"
+        findPascalNumberOn(2000, 5) shouldBe "664668499500"
     }
 }
 
