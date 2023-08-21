@@ -24,6 +24,9 @@ import io.github.tiagodocouto.codewars.mask.CreditCardMask.mask
 import io.github.tiagodocouto.helpers.AssertExtensions.shouldBe
 import org.junit.jupiter.api.Test
 
+/**
+ * [Credit Card Mask](https://www.codewars.com/kata/5412509bd436bd33920011bc)
+ */
 class CreditCardMaskTest {
     @Test
     fun `should mask a credit card number`() {

@@ -24,6 +24,9 @@ import io.github.tiagodocouto.codewars.mask.ReplaceWithPosition.alphabetPosition
 import io.github.tiagodocouto.helpers.AssertExtensions.shouldBe
 import org.junit.jupiter.api.Test
 
+/**
+ * [Replace With Alphabet Position](https://www.codewars.com/kata/546f922b54af40e1e90001da)
+ */
 class ReplaceWithPositionTest {
     @Test
     fun `should replace correctly`() {

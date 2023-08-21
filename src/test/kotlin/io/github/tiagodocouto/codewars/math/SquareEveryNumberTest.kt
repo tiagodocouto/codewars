@@ -24,6 +24,9 @@ import io.github.tiagodocouto.codewars.math.SquareEveryNumber.squareEveryDigit
 import io.github.tiagodocouto.helpers.AssertExtensions.shouldBe
 import org.junit.jupiter.api.Test
 
+/**
+ * [Square Every Digit](https://www.codewars.com/kata/546e2562b03326a88e000020)
+ */
 class SquareEveryNumberTest {
     @Test
     fun `square each digit`() {
