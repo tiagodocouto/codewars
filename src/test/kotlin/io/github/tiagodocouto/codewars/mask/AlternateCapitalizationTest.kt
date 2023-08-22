@@ -18,27 +18,20 @@
  * OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
  */
 
-package io.github.tiagodocouto.helper
+package io.github.tiagodocouto.codewars.mask
 
-import org.junit.jupiter.api.Assertions.assertArrayEquals
-import org.junit.jupiter.api.Assertions.assertEquals
-import org.junit.jupiter.api.Assertions.assertFalse
-import org.junit.jupiter.api.Assertions.assertIterableEquals
-import org.junit.jupiter.api.Assertions.assertTrue
+import io.github.tiagodocouto.helper.AssertExtensions.shouldBe
+import org.junit.jupiter.api.Test
 
-object AssertExtensions {
-    infix fun IntArray.shouldBe(expected: IntArray) =
-        assertArrayEquals(expected, this)
-
-    infix fun <T> Iterable<T>.shouldBe(expected: Iterable<T>) =
-        assertIterableEquals(expected, this)
-
-    infix fun <T> T.shouldBe(expected: T) =
-        assertEquals(expected, this)
-
-    fun Boolean.shouldBeTrue() =
-        assertTrue(this)
-
-    fun Boolean.shouldBeFalse() =
-        assertFalse(this)
+/**
+ * [Alternate capitalization](https://www.codewars.com/kata/59cfc000aeb2844d16000075)
+ */
+class AlternateCapitalizationTest {
+    @Test
+    fun `should alternate capitalize a string`() {
+        AlternateCapitalization.capitalize("abcdef") shouldBe listOf("AbCdEf", "aBcDeF")
+        AlternateCapitalization.capitalize("codewars") shouldBe listOf("CoDeWaRs", "cOdEwArS")
+        AlternateCapitalization.capitalize("abracadabra") shouldBe listOf("AbRaCaDaBrA", "aBrAcAdAbRa")
+        AlternateCapitalization.capitalize("codewarriors") shouldBe listOf("CoDeWaRrIoRs", "cOdEwArRiOrS")
+    }
 }

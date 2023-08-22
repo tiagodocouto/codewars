@@ -18,27 +18,26 @@
  * OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
  */
 
-package io.github.tiagodocouto.helper
+package io.github.tiagodocouto.codewars.mask
 
-import org.junit.jupiter.api.Assertions.assertArrayEquals
-import org.junit.jupiter.api.Assertions.assertEquals
-import org.junit.jupiter.api.Assertions.assertFalse
-import org.junit.jupiter.api.Assertions.assertIterableEquals
-import org.junit.jupiter.api.Assertions.assertTrue
+/**
+ * [Alternate capitalization](https://www.codewars.com/kata/59cfc000aeb2844d16000075)
+ *
+ * Given a string, capitalize the letters that occupy even indexes and odd indexes separately,
+ * and return as shown below. Index 0 will be considered even.
+ *
+ * For example, capitalize("abcdef") = ['AbCdEf', 'aBcDeF']. See test cases for more examples.
+ *
+ * The input will be a lowercase string with no spaces.
+ *
+ * Good luck!
+ */
+object AlternateCapitalization {
+    private fun fold(i: Int, acc: List<String>, c: Char) =
+        if (i % 2 == 0) listOf(acc[0] + c.uppercase(), acc[1] + c.lowercase())
+        else listOf(acc[0] + c.lowercase(), acc[1] + c.uppercase())
 
-object AssertExtensions {
-    infix fun IntArray.shouldBe(expected: IntArray) =
-        assertArrayEquals(expected, this)
-
-    infix fun <T> Iterable<T>.shouldBe(expected: Iterable<T>) =
-        assertIterableEquals(expected, this)
-
-    infix fun <T> T.shouldBe(expected: T) =
-        assertEquals(expected, this)
-
-    fun Boolean.shouldBeTrue() =
-        assertTrue(this)
-
-    fun Boolean.shouldBeFalse() =
-        assertFalse(this)
+    fun capitalize(text: String): List<String> =
+        text.toCharArray()
+            .foldIndexed(listOf("", ""), ::fold)
 }
