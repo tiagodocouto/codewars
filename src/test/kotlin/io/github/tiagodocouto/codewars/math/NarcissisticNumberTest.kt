@@ -25,6 +25,9 @@ import io.github.tiagodocouto.helper.AssertExtensions.shouldBeFalse
 import io.github.tiagodocouto.helper.AssertExtensions.shouldBeTrue
 import org.junit.jupiter.api.Test
 
+/**
+ * [Narcissistic Numbers](https://www.codewars.com/kata/5743f4ab03fa4a66a300020b#)
+ */
 class NarcissisticNumberTest {
     @Test
     fun `numbers should be narcissistic`() {

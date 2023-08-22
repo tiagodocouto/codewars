@@ -22,6 +22,15 @@ package io.github.tiagodocouto.codewars.math
 
 import kotlin.math.pow
 
+/**
+ * [Narcissistic Numbers](https://www.codewars.com/kata/5743f4ab03fa4a66a300020b#)
+ *
+ * A Narcissistic Number is a number that equals the sum of each of its digits raised to the number of digits.
+ * For example, 153 is a Narcissistic Number because 1^3 + 5^3 + 3^3 = 153.
+ *
+ * You will be given an integer num and are to return true if the integer is a
+ * Narcissistic Number and false if it is not.
+ */
 object NarcissisticNumber {
     fun isNarcissistic(number: Number): Boolean =
         number == number.toString()
