@@ -1,5 +1,6 @@
 [versions]
 kotlin = "1.9.0"
+kotlinx-kover = "0.7.3"
 test-junit = "5.7.0"
 quality-sonarqube = "4.3.0.3225"
 
@@ -14,4 +15,5 @@ test-junit = [
 
 [plugins]
 kotlin-jvm = { id = "org.jetbrains.kotlin.jvm", version.ref = "kotlin" }
+kotlinx-kover = { id = "org.jetbrains.kotlinx.kover", version.ref = "kotlinx-kover" }
 quality-sonarqube = { id = "org.sonarqube", version.ref = "quality-sonarqube" }

@@ -26,6 +26,7 @@ plugins {
     // Kotlin
     alias(libs.plugins.kotlin.jvm)
     // Quality
+    alias(libs.plugins.kotlinx.kover)
     alias(libs.plugins.quality.sonarqube)
 }
 
@@ -39,6 +40,16 @@ dependencies {
     runtimeOnly(libs.kotlin.reflect)
     // Test
     testImplementation(libs.bundles.test.junit)
+}
+
+kover {
+    koverReport {
+        defaults {
+            this.xml { onCheck = true }
+            this.html { onCheck = true }
+            this.verify { onCheck = true }
+        }
+    }
 }
 
 java { sourceCompatibility = JavaVersion.VERSION_20 }
