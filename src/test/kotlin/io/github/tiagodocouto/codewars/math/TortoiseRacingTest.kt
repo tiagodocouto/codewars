@@ -18,23 +18,30 @@
  * OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
  */
 
-package io.github.tiagodocouto.helper
+package io.github.tiagodocouto.codewars.math
 
-import org.junit.jupiter.api.Assertions.assertArrayEquals
-import org.junit.jupiter.api.Assertions.assertEquals
-import org.junit.jupiter.api.Assertions.assertFalse
-import org.junit.jupiter.api.Assertions.assertTrue
+import io.github.tiagodocouto.helper.AssertExtensions.shouldBe
+import org.junit.jupiter.api.Test
 
-object AssertExtensions {
-    infix fun IntArray.shouldBe(expected: IntArray) =
-        assertArrayEquals(expected, this)
+/**
+ * [Tortoise Racing](https://www.codewars.com/kata/55e2adece53b4cdcb900006c)
+ */
+class TortoiseRacingTest {
+    @Test
+    fun `eventually should win the race`() {
+        TortoiseRacing.race(720, 850, 70) shouldBe intArrayOf(0, 32, 18)
+        TortoiseRacing.race(80, 91, 37) shouldBe intArrayOf(3, 21, 49)
+        TortoiseRacing.race(100, 120, 100) shouldBe intArrayOf(5, 0, 0)
+        TortoiseRacing.race(466, 1139, 89) shouldBe intArrayOf(0, 7, 56)
+        TortoiseRacing.race(202, 811, 143) shouldBe intArrayOf(0, 14, 5)
+        TortoiseRacing.race(720, 850, 37) shouldBe intArrayOf(0, 17, 4)
+        TortoiseRacing.race(420, 1010, 137) shouldBe intArrayOf(0, 13, 55)
+        TortoiseRacing.race(574, 664, 134) shouldBe intArrayOf(1, 29, 20)
+        TortoiseRacing.race(572, 843, 95) shouldBe intArrayOf(0, 21, 1)
+    }
 
-    infix fun <T> T.shouldBe(expected: T) =
-        assertEquals(expected, this)
-
-    fun Boolean.shouldBeTrue() =
-        assertTrue(this)
-
-    fun Boolean.shouldBeFalse() =
-        assertFalse(this)
+    @Test
+    fun `should not win the race`() {
+        TortoiseRacing.race(820, 81, 550) shouldBe intArrayOf()
+    }
 }

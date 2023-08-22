@@ -21,6 +21,7 @@ programming challenges in many languages, and I will be using Kotlin for that.
 | [Sum of Digits / Digital Root](https://www.codewars.com/kata/541c8630095125aba6000c00)   | [SumTriangleOddNumbers.kt](src/main/kotlin/io/github/tiagodocouto/codewars/math/SumTriangleOddNumbers.kt) |
 | [Triangle type](https://www.codewars.com/kata/53907ac3cd51b69f790006c5)                  | [TriangleType.kt](src/main/kotlin/io/github/tiagodocouto/codewars/math/TriangleType.kt)                   |
 | [Decode the Morse code](https://www.codewars.com/kata/54b724efac3d5402db00065e)          | [MorseCodeDecoder.kt](src/main/kotlin/io/github/tiagodocouto/codewars/code/MorseCodeDecoder.kt)           |
+| [Tortoise Racing](https://www.codewars.com/kata/55e2adece53b4cdcb900006c)                | [TortoiseRacing.kt](src/main/kotlin/io/github/tiagodocouto/codewars/math/TortoiseRacing.kt)               |
 
 ---
 
