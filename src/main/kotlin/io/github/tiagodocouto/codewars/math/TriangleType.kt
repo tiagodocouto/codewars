@@ -20,6 +20,11 @@
 
 package io.github.tiagodocouto.codewars.math
 
+import io.github.tiagodocouto.codewars.math.TriangleType.Type.ACUTE
+import io.github.tiagodocouto.codewars.math.TriangleType.Type.NOT_TRIANGLE
+import io.github.tiagodocouto.codewars.math.TriangleType.Type.OBTUSE
+import io.github.tiagodocouto.codewars.math.TriangleType.Type.RIGHT
+
 /**
  * [Triangle type](https://www.codewars.com/kata/53907ac3cd51b69f790006c5/)
  *
@@ -56,6 +61,16 @@ package io.github.tiagodocouto.codewars.math
  * There is a very small chance of random test to fail due to round-off error, in such case resubmit your solution.
  */
 object TriangleType {
+    enum class Type(val value: Int) {
+        NOT_TRIANGLE(0),
+        ACUTE(1),
+        RIGHT(2),
+        OBTUSE(3)
+    }
+
+    private val Double.square: Double
+        get() = this * this
+
     /**
      *  Should return the ᐃ type:
      *  0: if ᐃ cannot be made with given sides
@@ -63,9 +78,14 @@ object TriangleType {
      *  2: right ᐃ
      *  3: obtuse ᐃ
      */
-    fun type(a: Double, b: Double, c: Double): Int =
-        when {
-            a * a + b * b < c * c -> 1
-            else -> 0
+    fun type(a: Double, b: Double, c: Double): Type =
+        arrayOf(a, b, c).sortedArray().let { (a1, b1, c1) ->
+            when {
+                a1 + b1 <= c1 -> NOT_TRIANGLE
+                a1.square + b1.square > c1.square -> ACUTE
+                a1.square + b1.square == c1.square -> RIGHT
+                a1.square + b1.square < c1.square -> OBTUSE
+                else -> NOT_TRIANGLE
+            }
         }
 }

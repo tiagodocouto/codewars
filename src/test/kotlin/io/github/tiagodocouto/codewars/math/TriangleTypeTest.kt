@@ -20,27 +20,35 @@
 
 package io.github.tiagodocouto.codewars.math
 
+import io.github.tiagodocouto.codewars.math.TriangleType.Type.ACUTE
+import io.github.tiagodocouto.codewars.math.TriangleType.Type.NOT_TRIANGLE
+import io.github.tiagodocouto.codewars.math.TriangleType.Type.OBTUSE
+import io.github.tiagodocouto.codewars.math.TriangleType.Type.RIGHT
+import io.github.tiagodocouto.helper.AssertExtensions.shouldBe
 import org.junit.jupiter.api.Test
 
 class TriangleTypeTest {
     @Test
     fun `should not be a triangle`() {
-//        TriangleType.type(7.0, 3.0, 2.0) shouldBe 0
-//        TriangleType.type(2.0, 4.0, 6.0) shouldBe 0
+        TriangleType.type(7.0, 3.0, 2.0) shouldBe NOT_TRIANGLE
+        TriangleType.type(2.0, 4.0, 6.0) shouldBe NOT_TRIANGLE
     }
 
     @Test
     fun `should be an acute triangle`() {
-//        TriangleType.type(8.0, 5.0, 7.0) shouldBe 1
+        TriangleType.type(8.0, 5.0, 7.0) shouldBe ACUTE
+        TriangleType.type(7.0, 8.0, 5.0) shouldBe ACUTE
     }
 
     @Test
     fun `should be a right triangle`() {
-//        TriangleType.type(3.0, 4.0, 5.0) shouldBe 2
+        TriangleType.type(3.0, 4.0, 5.0) shouldBe RIGHT
+        TriangleType.type(5.0, 3.0, 4.0) shouldBe RIGHT
     }
 
     @Test
     fun `should be an obtuse triangle`() {
-//        TriangleType.type(7.0, 12.0, 8.0) shouldBe 3
+        TriangleType.type(7.0, 12.0, 8.0) shouldBe OBTUSE
+        TriangleType.type(12.0, 8.0, 7.0) shouldBe OBTUSE
     }
 }
