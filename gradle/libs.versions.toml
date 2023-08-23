@@ -1,5 +1,5 @@
 [versions]
-kotlin = "1.9.0"
+kotlin = "1.9.10"
 kotlinx-kover = "0.7.3"
 test-junit = "5.7.0"
 quality-sonarqube = "4.3.0.3225"
